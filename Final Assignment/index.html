@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<!-- DAT HUYNH -->
+	<!-- INT 222 B -->
+	<!-- Professor Sunny Yue Shi -->
+	<!--  assignment 3 html page-->
+	
+	<head>
+		<meta http-equiv="content-type"
+             content="text/html;charset=utf-8" />
+		<title>Sign Up</title>
+		
+		<link rel="stylesheet" type="text/css" href="a3.css">
+		<script type="text/javascript" src="a3.js">
+		</script>
+		
+		<script src="a3-countries.js">
+	
+		</script>
+	
+	</head>
+		
+		
+					<!-- upon the body loading, it loads a function which loads the select option for country-->
+	<body onload="loadDropdown()">
+	
+	<nav class="width">
+	
+	<div class="headbarbackground">
+	<br/><label class="fontsty">&nbsp; Seneda&#174; INC. </label>
+	</div>
+	
+		
+		
+		
+		<h2> Create Your Senada Account
+		</h2>
+		
+		<p>Your Senada Account gives you access to a variety of online services, applications, and communities. you may choose to sign
+	
+		up for subscriptions when you create your account
+		</p>
+		
+		<label class="red">* Required information </label>
+		<br/><br/>
+		
+						<!--form creation, upon clicking the submit(Create Account) button, it will call a validation function to check input -->
+		<form  name="senadareg" method="post" action="http://formpost.azurewebsites.net/home/test" autocomplete="on" onsubmit='return validateAll();' >
+			<div class ="width2">
+			
+					<!-- input for email-->
+					<label class="fieldname">Email <span class="red">* </span></label>
+					<input class="shadow" type="email" autofocus required /> &nbsp; your e-mail address is your username.
+					<br/>
+				
+					<label class="fieldname"> &nbsp;</label><p id="emailvalid"> </p>
+					
+					<!--input for password -->
+					<label class="fieldname">Password <span class="red">* </span></label>
+					<input class="shadow" type="password" name="password" id="password" required onkeyup="validatePassword()"/>
+					<br/>
+					<label class="fieldname"> &nbsp;</label><p id="passwordvalid"> </p>
+					
+					<!-- input for password confirmation -->
+					<label class="fieldname">Retype Password <span class="red">* </span></label>
+					<input class="shadow" type="password" name="cpassword" id="cpassword" required onkeyup="validateCpassword()"/>
+					<br/>
+					<label class="fieldname"> &nbsp;</label><p id="cpasswordvalid"> </p>
+					<br/><br/>
+					<!-- country selection-->
+					<label class="fieldname">Country <span class="red">* </span></label>
+					<select class="shadow" name="country" id="country"  onchange="loadprovince();">
+										
+					</select>
+					<br/>
+					<label class="fieldname"> &nbsp;</label><p id="countryvalid"> </p>
+					<br/>
+					
+					<!-- First Name input-->
+				<label class="fieldname">Name <span class="red">* </span></label>
+					<input class="shadow" type="text" name="fname" id="fname" placeholder="First or Given Name" required onkeyup="validateName()"/>
+					
+					
+					<!-- last name input-->
+				<label class="red"> &nbsp;*</label>
+				<input style="float: none;" class="shadow" type="text" name="lname" id="lname" placeholder="Last Name or Surname" required onkeyup="validateLName()" />
+				
+
+					<br/>
+					<label class="fieldname"> &nbsp;</label><p id="namevalid"> </p>
+					
+					
+					<!-- Job title input-->
+				<label class="fieldname">Job Title <span class="red">* </span></label>
+					<input class="shadow" type="text" name="jobtitle" id="jobtitle" required />
+					<br/>
+					<label class="fieldname"> &nbsp;</label><p id="jobtitlevalid"> </p>
+					
+					<!-- Phone number, required, logic for input format-->
+				<label class="fieldname">Phone Number <span class="red">* </span></label>
+					<input class="shadow" type="text" name="phonenumber" id="phonenumber" placeholder="(999)999-9999" required onkeyup="validatePhone()" />
+					<br/>
+					<label class="fieldname"> &nbsp;</label><p id="phonenumbervalid"> </p>
+					
+					<!-- Company name input-->
+				<label class="fieldname">Your Company <span class="red">* </span></label>
+					<input class="shadow" type="text" name="company" id="company" required />
+					<br/>
+					<label class="fieldname"> &nbsp;</label><p id="companyvalid"> </p>
+					
+					<!-- address input-->
+				<label class="fieldname">Address <span class="red">* </span></label>
+					<input class="shadow" type="text" name="address" id="address" required />
+					<br/>
+					<label class="fieldname"> &nbsp;</label><p id="addressvalid"> </p>
+					
+					<!-- optional second address input-->
+					<label class="fieldname"> &nbsp;</label>
+					<input class="shadow" type="text" name="address2" id="address2" />
+					<br/>
+					
+					<label class="fieldname"> &nbsp;</label><p id="address2valid"> </p>
+					
+					<!-- City input-->
+					<label class="fieldname">City <span class="red">* </span></label>
+					<input class="shadow" type="text" name="city" id="city" required />
+					<br/>
+					<label class="fieldname"> &nbsp;</label><p id="cityvalid"> </p>
+					
+			<p>	<!-- Province input, only shows if country CA is chosen-->
+				<label class="fieldname">Province <span class="red">* </span></label>
+					<select class="shadow" name="province" id="province" required onselect="provincevalid();">
+						
+					<option value="" >-Select-</option>
+					<option value="AB" id="AB">Alberta</option>
+					<option value="BC" id="BC">British Columbia</option>
+					<option value="MB" id="MB">Manitoba</option>
+					<option value="NB" id="NB">New Brunswick</option>
+					<option value="NL" id="NL">Newfoundland and Labrador</option>
+					<option value="NS" id="NS">Nova Scotia</option>
+					<option value="ON" id="ON">Ontario</option>
+					<option value="PE" id="PE">Prince Edward Island</option>
+					<option value="QC" id="QC">Quebec</option>
+					<option value="SK" id="SK">Saskatchewan</option>
+					<option value="NT" id="NT">Northwest Territories</option>
+					<option value="NU" id="NU">Nunavut</option>
+					<option value="YT" id="YT">Yukon</option>
+			
+						
+					</select>
+					<input class="shadow" type="text" name="province" id="emptyprovince" style="display:none"/>
+			</p>	
+				<br/>
+					<label class="fieldname"> &nbsp;</label><p id="provincevalid"> </p>
+
+					<!-- Postal code input-->
+				<label class="fieldname">ZIP/Postal Code <span class="red">* </span></label>
+					<input class="shadow" type="text" name="code" id="code" required />
+					<br/>
+					<p id="codevalid"> </p>
+				<br/><br/>
+				
+				<!-- fieldset type of radio button-->
+				<label class="fieldname"> &nbsp;</label>
+					<fieldset style='width: 30%;'>
+			
+							<legend>How did you hear abot us?</legend>
+							<input type="radio" name="found" id="google" value="Google Search" /><label for="google">Google Search</label>
+							<br/>
+							<input type="radio" name="found" id="blog" value="Blog Post" /><label for="blog">Blog Post</label>
+							<br/>
+							<input type="radio" name="found" id="friend" value="Friend" /><label for="friend">Friend</label>
+							<br/>
+							<input type="radio" name="found" id="facebook" value="FaceBook" /><label for="facebook">FaceBook</label>
+							<br/>
+							<input type="radio" name="found" id="others" value="Others" /><label for="others">Others</label>
+				
+						</fieldset>
+						
+					<br/>
+					
+					<!-- checkbox to ask if person wants to sign up for emails about products-->
+					<label class="fieldname"> &nbsp;</label>
+					<input type="checkbox" name="lettersignup" id="lettersignup" />Yes, Send me e-mails on Senada Products, Services and Events.
+					<br/><br/>
+					<label class="fieldname"> &nbsp;</label>
+					
+					<!-- submit and reset button, classes makes it red and have similar design as input boxes-->
+					<input class ="redbutton shadow" type="submit" id="submit" value="Create Account" />&nbsp; <input class="redbutton" type="reset" name="reset" id="reset" value="Reset" />
+			
+	
+					<br/><br/>
+					<br/><br/>
+					
+			<footer class="timestamp">
+				<script>
+					var dt=new Date(document.lastModified);
+					document.write(" This page was last modified on " +
+					dt.toLocaleString() + "");
+				</script>
+			</footer>
+			
+			</div>
+			
+
+		</form>
+	</nav>
+	
+	
+		
+	<br/><br/>
+	
+		
+	</body>
+
+
+
+
+
+
+
+
+</html>
+
+
+
+
+

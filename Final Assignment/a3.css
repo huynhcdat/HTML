@@ -1,0 +1,91 @@
+/*
+	Dat Huynh
+	INT222B
+	Professor Sunny Yue Shi
+	css file
+	a3.css
+
+
+*/
+
+
+
+	h2{		/* font style for h2*/
+		font-family: Arial;
+		font-size: 18px;
+	}
+	
+	.fontsty{
+		font-family: Arial;
+		font-size: 24px;
+		font-weight: bold;
+		color: white;
+	}
+
+	.width{			/* designing layout option, making width smaller*/
+		width: 90%;
+		margin:auto;
+		border: 1px solid grey;
+
+	}
+
+	.width2{		/*further squeezing the width for presentation*/
+		
+			
+	}
+
+	
+	
+	.headbarbackground{		/* top of screen menu bar with company name*/
+		
+		height:50px;
+		background-color: #C40707;
+		border-bottom: 3px solid black;
+	}
+
+	.red{		/* class for red text*/
+		color:red;
+	}
+	.right{		/* class for aligning text to the right*/
+		text-align: right;
+	}
+
+	/* red button for submit and reset*/
+	.redbutton{
+		box-shadow: 1px 1px 0px 0px grey;
+		 border-radius: 5px;
+		background-color: firebrick;
+		color: white;
+		
+	}
+	.fieldname{
+		display: inline-block;	/*field css to align text*/
+		float: left;
+		clear: left;
+		width: 250px;
+		text-align: right;
+	}
+	
+	.shadow{	/* css to align input boxes*/
+		 box-shadow: 2px 2px 0px 0px grey;
+		 border-radius: 5px;
+		 display: inline-block;
+		 float: left;
+		 width: 30%;
+		 
+	}
+	
+	input:focus{	/* when an input box is focused, the border turns green*/
+		outline: none;
+		border:2px solid green;
+		
+	}
+	select:focus{	/* same as above, but for select options*/
+		outline: none;
+		border:2px solid green;
+	}
+	
+	.timestamp{
+		text-align: center;
+		background-color: #DCDCDC;
+	}
